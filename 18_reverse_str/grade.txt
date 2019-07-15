@@ -1,20 +1,10 @@
-Grading at Mon Jul 15 18:54:50 UTC 2019
+Grading at Mon Jul 15 18:58:34 UTC 2019
 Attempting to compile  reverse.c
-Your file matched the expected output
-Your output matched what we expected
-Removing your main() and replacing it with our own to run more tests...
-#################################################
-testcase2:
- - Your program segfaulted.
-your code failed the testcase
-#################################################
-testcase3:
-Your file matched the expected output
-#################################################
-testcase4:
-Your file matched the expected output
-#################################################
-testcase5:
-Your file matched the expected output
+reverse.c: In function ‘reverse’:
+reverse.c:26:7: error: ‘p’ undeclared (first use in this function)
+     *(p + len - 1 - i) = temp;
+       ^
+reverse.c:26:7: note: each undeclared identifier is reported only once for each function it appears in
+The code did not compile!
 
-Overall Grade: C
+Overall Grade: F
