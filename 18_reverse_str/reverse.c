@@ -6,18 +6,26 @@ void reverse(char * str) {
   //WRITE ME!
   char * p1 = str;
   char * p2 = strchr(str, '\0');
-  if (p1 == p2) {
+  if (p2 - p1 == 0) {
     return;
   }
-  
+  // do {
+  //  char temp = *p1;
+  //  *p1 = *p2;
+  //  *p2 = temp;
+  //  p1++;
+  //  p2--;
+  //} while (p1 < p2);
+
+  size_t len = p2 - p1;
   p2--;
-  do {
+  for (size_t i = 0; i < len / 2; i++) {
     char temp = *p1;
     *p1 = *p2;
     *p2 = temp;
     p1++;
     p2--;
-  } while (p1 < p2);
+  }
 }
 
 int main(void) {
