@@ -4,6 +4,20 @@
 
 void reverse(char * str) {
   //WRITE ME!
+  char * p1 = str;
+  char * p2 = strchr(str, '\0');
+  if (p1 == p2) {
+    return;
+  }
+  
+  p2--;
+  do {
+    char temp = *p1;
+    *p1 = *p2;
+    *p2 = temp;
+    p1++;
+    p2--;
+  } while (p1 < p2);
 }
 
 int main(void) {
