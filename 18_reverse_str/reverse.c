@@ -7,7 +7,7 @@ void reverse(char * str) {
   size_t len = strlen(str);
   if(len <= 1) return;
   
-  char * p2 = str + len - 1; // point to last non-null character
+  //char * p2 = str + len - 1; // point to last non-null character
   //char * p2 = strchr(str, '\0');
   //if (p2 - p1 == 0) {
   //  return;
@@ -22,8 +22,8 @@ void reverse(char * str) {
 
   for (size_t i = 0; i < len / 2; i++) {
     char temp = *(str + i);
-    *(str + i) = *(p2 - i);
-    *(p2 - i) = temp;
+    *(str + i) = *(str + len - 1 - i);
+    *(p + len - 1 - i) = temp;
   }
 }
 
