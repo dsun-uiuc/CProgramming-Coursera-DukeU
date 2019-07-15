@@ -4,15 +4,24 @@
 int * arrayMax(int * array, int n) {
   if (n <= 0)
     return NULL;
-  int largestIndex = 0;
+  // Using array:
+  //int largestIndex = 0;
+  //for (size_t i = 1; i < n; i++) {
+  //  if (array[i] > array[largestIndex]) {
+  //    largestIndex = i;
+  //  }
+  //}
+  //int * pLargest = &array[largestIndex];
+  // return pLargest;
+
+  // Using pointer:
+  int * p = array;
   for (size_t i = 1; i < n; i++) {
-    if (array[i] > array[largestIndex]) {
-      largestIndex = i;
+    if (*p < array[i]) {
+      p = &array[i];
     }
   }
-  int * pLargest = &array[largestIndex];
-
-  return pLargest;
+  return p;
 }
 
 void doTest(int * array, int n) {
