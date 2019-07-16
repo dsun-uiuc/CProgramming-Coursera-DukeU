@@ -1,0 +1,64 @@
+Grading at Tue Jul 16 00:07:25 UTC 2019
+**Testing broken implementation 10 **
+-------------------------------------
+
+Failed test: x= 2, y= 2
+
+**Testing broken implementation 11 **
+-------------------------------------
+
+Failed test: x= 65, y= 1
+
+**Testing broken implementation 1 **
+-------------------------------------
+
+Failed test: x= 0, y= 1
+
+**Testing broken implementation 2 **
+-------------------------------------
+
+Failed test: x= 1, y= 0
+
+**Testing broken implementation 3 **
+-------------------------------------
+
+Failed test: x= 0, y= 0
+
+**Testing broken implementation 4 **
+-------------------------------------
+
+Failed test: x= 10000, y= 2
+
+**Testing broken implementation 5 **
+-------------------------------------
+
+Failed test: x= 2, y= 2
+
+**Testing broken implementation 6 **
+-------------------------------------
+
+Failed test: x= 0, y= 1
+
+**Testing broken implementation 7 **
+-------------------------------------
+
+Failed test: x= 0, y= 1
+
+**Testing broken implementation 8 **
+-------------------------------------
+
+Failed test: x= 4294967295, y= 2
+
+**Testing broken implementation 9 **
+-------------------------------------
+
+Failed test: x= 65, y= 1
+
+**Testing correct implementation **
+-------------------------------------
+
+
+All tests were ok.
+
+
+Overall Grade: PASSED
