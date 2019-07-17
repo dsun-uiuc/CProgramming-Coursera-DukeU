@@ -8,21 +8,21 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
   const card_t * const *cp2 = vp2;
   // const card_t * cp1 = *c1;
   //const card_t * cp2 = *c2;
-  int result = 0;
+  //int result = 0;
   //int v1 = (**cp1).value;
   //int v2 = (**cp2).value;
-  if(*cp1 == NULL && *cp2 == NULL)
-    return 0;
-  if(*cp1 == NULL && *cp2 != NULL)
-    return 1;
-  if(*cp1 != NULL && *cp2 == NULL)
-    return -1;
-  if ((*cp1)->value == (*cp2)->value)
-    result = (int)(*cp2)->suit - (int)(*cp1)->suit;
-  else
-    result = (int)(*cp2)->value - (int)(*cp1)->value;
-  //return ((**cp2).value == (**cp1).value) ? ((**cp2).suit - (**cp1).suit) : ((**cp2).value - (**cp1).value);
-  return result;
+  // if(*cp1 == NULL && *cp2 == NULL)
+  //  return 0;
+  //if(*cp1 == NULL && *cp2 != NULL)
+  //  return 1;
+  //if(*cp1 != NULL && *cp2 == NULL)
+  //  return -1;
+  // if ((*cp1)->value == (*cp2)->value)
+  //  result = (int)(*cp2)->suit - (int)(*cp1)->suit;
+  //else
+  //  result = (int)(*cp2)->value - (int)(*cp1)->value;
+  return ((**cp2).value == (**cp1).value) ? ((**cp2).suit - (**cp1).suit) : ((**cp2).value - (**cp1).value);
+  //return result;
 }
 
 suit_t flush_suit(deck_t * hand) {
@@ -174,8 +174,8 @@ hand_eval_t build_hand_from_match(deck_t * hand,
 
 
 int compare_hands(deck_t * hand1, deck_t * hand2) {
-  qsort(hand1->cards, hand1->n_cards, sizeof(const card_t*), card_ptr_comp);
-  qsort(hand2->cards, hand2->n_cards, sizeof(const card_t*), card_ptr_comp);
+  qsort(hand1->cards, hand1->n_cards, sizeof(card_t*), card_ptr_comp);
+  qsort(hand2->cards, hand2->n_cards, sizeof( card_t*), card_ptr_comp);
 
   hand_eval_t h1 = evaluate_hand(hand1);
   hand_eval_t h2 = evaluate_hand(hand2);
