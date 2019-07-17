@@ -11,10 +11,10 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
   int result = 0;
   //int v1 = (**cp1).value;
   //int v2 = (**cp2).value;
-  if ((**cp1).value == (**cp2).value)
-    result = (int)(**cp2).suit - (int)(**cp1).suit;
+  if ((*cp1)->value == (*cp2)->value)
+    result = (int)(*cp2)->suit - (int)(*cp1)->suit;
   else
-    result = (int)(**cp2).value - (int)(**cp1).value;
+    result = (int)(*cp2)->value - (int)(*cp1)->value;
   //return ((**cp2).value == (**cp1).value) ? ((**cp2).suit - (**cp1).suit) : ((**cp2).value - (**cp1).value);
   return result;
 }
