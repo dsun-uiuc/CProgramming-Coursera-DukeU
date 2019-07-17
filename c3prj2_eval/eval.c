@@ -8,7 +8,13 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
   const card_t * const * cp2 = vp2;
   // const card_t * cp1 = *c1;
   //const card_t * cp2 = *c2;
-  return ((**cp2).value == (**cp1).value) ? ((**cp2).suit - (**cp1).suit) : ((**cp2).value - (**cp1).value);
+  int result = 0;
+  if ((**cp1).value == (**cp2).value)
+    result = (int)(**cp2).suit - (int)(**cp1).suit;
+  else
+    result = (int)(**cp2).value - (int)(**cp1).value;
+  //return ((**cp2).value == (**cp1).value) ? ((**cp2).suit - (**cp1).suit) : ((**cp2).value - (**cp1).value);
+  return result;
 }
 
 suit_t flush_suit(deck_t * hand) {
