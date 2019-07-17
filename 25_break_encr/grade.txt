@@ -1,0 +1,15 @@
+Grading at Wed Jul 17 19:43:11 UTC 2019
+Attempting to compile breaker.c 
+gcc -o breaker -Wall -Werror -pedantic -std=gnu99 break_encr.c
+testcase1 passed
+#################################################
+testcase2:
+testcase2 passed
+#################################################
+testcase3:
+testcase3 failed
+#################################################
+testcase4:
+testcase4 failed
+
+Overall Grade: F
