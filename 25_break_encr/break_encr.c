@@ -49,6 +49,8 @@ int main(int argc, char ** argv) {
 
 int freqCount(FILE * f, size_t * count) {
 
+  // using fgets
+  /*
   char line[LINE_SIZE];
   while (fgets(line, LINE_SIZE, f) != NULL) {
     if (strchr(line, '\n') == NULL) {
@@ -64,6 +66,29 @@ int freqCount(FILE * f, size_t * count) {
       }
     }
   }
+  */
+  // using fgetc
+  int c = fgetc(f);
+  size_t nletter = 0;
+  if (c == EOF) {
+    perror("Empty file!\n");
+    return EXIT_FAILURE;
+  }
+     
+  do {
+    if (isalpha(c)) {
+      c = tolower(c);
+      c -= 'a';
+      count[c]++;
+      nletter++;
+    }
+  } while ((c = fgetc(f)) != EOF);
+
+  if (nletter == 0) {
+    perror("No letters in file!\n");
+    return EXIT_FAILURE;
+  }
+  
   return EXIT_SUCCESS;
 }
 
