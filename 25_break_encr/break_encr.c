@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <string.h>
 
-#define LINE_SIZE 1000
+#define LINE_SIZE 2000
 
 int freqCount(FILE * f, size_t * count);
 unsigned largestIndex(size_t * count);
