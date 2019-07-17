@@ -1,4 +1,4 @@
-Grading at Wed Jul 17 06:25:15 UTC 2019
+Grading at Wed Jul 17 06:49:31 UTC 2019
 Compiling your code
 rm -f test poker cards.o my-test-main.o *~
 cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o deck.o deck.c
@@ -138,111 +138,111 @@ Hand 2 wins!							Hand 2 wins!
 ============================					============================
 Testcase 2: Trying hands with pairs
 Valgrind returned an error status
-==850== Memcheck, a memory error detector
-==850== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==850== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==850== Command: ./test-eval inp.2.txt
-==850== Parent PID: 849
-==850== 
-==850== Invalid read of size 4
-==850==    at 0x40146C: card_ptr_comp (eval.c:12)
-==850==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==850==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==850==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==850==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==850==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==850==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==850==    by 0x4E7369E: qsort_r (msort.c:297)
-==850==    by 0x401B88: compare_hands (eval.c:170)
-==850==    by 0x402AFD: main (test-eval.c:124)
-==850==  Address 0x5207518 is 0 bytes after a block of size 40 alloc'd
-==850==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==850==    by 0x401017: add_card_to (deck-c4.c:29)
-==850==    by 0x403218: hand_from_string (input.c:49)
-==850==    by 0x402AE6: main (test-eval.c:123)
-==850== 
-==850== Invalid read of size 4
-==850==    at 0x40148F: card_ptr_comp (eval.c:15)
-==850==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==850==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==850==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==850==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==850==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==850==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==850==    by 0x4E7369E: qsort_r (msort.c:297)
-==850==    by 0x401B88: compare_hands (eval.c:170)
-==850==    by 0x402AFD: main (test-eval.c:124)
-==850==  Address 0x5207518 is 0 bytes after a block of size 40 alloc'd
-==850==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==850==    by 0x401017: add_card_to (deck-c4.c:29)
-==850==    by 0x403218: hand_from_string (input.c:49)
-==850==    by 0x402AE6: main (test-eval.c:123)
-==850== 
-==850== Invalid read of size 4
-==850==    at 0x40146C: card_ptr_comp (eval.c:12)
-==850==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==850==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==850==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==850==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==850==    by 0x4E7369E: qsort_r (msort.c:297)
-==850==    by 0x401B88: compare_hands (eval.c:170)
-==850==    by 0x402AFD: main (test-eval.c:124)
-==850==  Address 0x5207518 is 0 bytes after a block of size 40 alloc'd
-==850==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==850==    by 0x401017: add_card_to (deck-c4.c:29)
-==850==    by 0x403218: hand_from_string (input.c:49)
-==850==    by 0x402AE6: main (test-eval.c:123)
-==850== 
-==850== Invalid read of size 4
-==850==    at 0x40148F: card_ptr_comp (eval.c:15)
-==850==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==850==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==850==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==850==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==850==    by 0x4E7369E: qsort_r (msort.c:297)
-==850==    by 0x401B88: compare_hands (eval.c:170)
-==850==    by 0x402AFD: main (test-eval.c:124)
-==850==  Address 0x5207518 is 0 bytes after a block of size 40 alloc'd
-==850==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==850==    by 0x401017: add_card_to (deck-c4.c:29)
-==850==    by 0x403218: hand_from_string (input.c:49)
-==850==    by 0x402AE6: main (test-eval.c:123)
-==850== 
-==850== Invalid read of size 4
-==850==    at 0x40146C: card_ptr_comp (eval.c:12)
-==850==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==850==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==850==    by 0x4E7369E: qsort_r (msort.c:297)
-==850==    by 0x401B88: compare_hands (eval.c:170)
-==850==    by 0x402AFD: main (test-eval.c:124)
-==850==  Address 0x5207518 is 0 bytes after a block of size 40 alloc'd
-==850==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==850==    by 0x401017: add_card_to (deck-c4.c:29)
-==850==    by 0x403218: hand_from_string (input.c:49)
-==850==    by 0x402AE6: main (test-eval.c:123)
-==850== 
-==850== Invalid read of size 4
-==850==    at 0x40148F: card_ptr_comp (eval.c:15)
-==850==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==850==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==850==    by 0x4E7369E: qsort_r (msort.c:297)
-==850==    by 0x401B88: compare_hands (eval.c:170)
-==850==    by 0x402AFD: main (test-eval.c:124)
-==850==  Address 0x5207518 is 0 bytes after a block of size 40 alloc'd
-==850==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==850==    by 0x401017: add_card_to (deck-c4.c:29)
-==850==    by 0x403218: hand_from_string (input.c:49)
-==850==    by 0x402AE6: main (test-eval.c:123)
-==850== 
-==850== 
-==850== HEAP SUMMARY:
-==850==     in use at exit: 0 bytes in 0 blocks
-==850==   total heap usage: 232 allocs, 232 frees, 13,028 bytes allocated
-==850== 
-==850== All heap blocks were freed -- no leaks are possible
-==850== 
-==850== For counts of detected and suppressed errors, rerun with: -v
-==850== ERROR SUMMARY: 10 errors from 6 contexts (suppressed: 0 from 0)
+==1257== Memcheck, a memory error detector
+==1257== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==1257== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==1257== Command: ./test-eval inp.2.txt
+==1257== Parent PID: 1256
+==1257== 
+==1257== Invalid read of size 4
+==1257==    at 0x40146C: card_ptr_comp (eval.c:12)
+==1257==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1257==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1257==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1257==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1257==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1257==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1257==    by 0x4E7369E: qsort_r (msort.c:297)
+==1257==    by 0x401B88: compare_hands (eval.c:170)
+==1257==    by 0x402AFD: main (test-eval.c:124)
+==1257==  Address 0x5207518 is 0 bytes after a block of size 40 alloc'd
+==1257==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1257==    by 0x401017: add_card_to (deck-c4.c:29)
+==1257==    by 0x403218: hand_from_string (input.c:49)
+==1257==    by 0x402AE6: main (test-eval.c:123)
+==1257== 
+==1257== Invalid read of size 4
+==1257==    at 0x40148F: card_ptr_comp (eval.c:15)
+==1257==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1257==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1257==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1257==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1257==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1257==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1257==    by 0x4E7369E: qsort_r (msort.c:297)
+==1257==    by 0x401B88: compare_hands (eval.c:170)
+==1257==    by 0x402AFD: main (test-eval.c:124)
+==1257==  Address 0x5207518 is 0 bytes after a block of size 40 alloc'd
+==1257==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1257==    by 0x401017: add_card_to (deck-c4.c:29)
+==1257==    by 0x403218: hand_from_string (input.c:49)
+==1257==    by 0x402AE6: main (test-eval.c:123)
+==1257== 
+==1257== Invalid read of size 4
+==1257==    at 0x40146C: card_ptr_comp (eval.c:12)
+==1257==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1257==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1257==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1257==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1257==    by 0x4E7369E: qsort_r (msort.c:297)
+==1257==    by 0x401B88: compare_hands (eval.c:170)
+==1257==    by 0x402AFD: main (test-eval.c:124)
+==1257==  Address 0x5207518 is 0 bytes after a block of size 40 alloc'd
+==1257==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1257==    by 0x401017: add_card_to (deck-c4.c:29)
+==1257==    by 0x403218: hand_from_string (input.c:49)
+==1257==    by 0x402AE6: main (test-eval.c:123)
+==1257== 
+==1257== Invalid read of size 4
+==1257==    at 0x40148F: card_ptr_comp (eval.c:15)
+==1257==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1257==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1257==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1257==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1257==    by 0x4E7369E: qsort_r (msort.c:297)
+==1257==    by 0x401B88: compare_hands (eval.c:170)
+==1257==    by 0x402AFD: main (test-eval.c:124)
+==1257==  Address 0x5207518 is 0 bytes after a block of size 40 alloc'd
+==1257==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1257==    by 0x401017: add_card_to (deck-c4.c:29)
+==1257==    by 0x403218: hand_from_string (input.c:49)
+==1257==    by 0x402AE6: main (test-eval.c:123)
+==1257== 
+==1257== Invalid read of size 4
+==1257==    at 0x40146C: card_ptr_comp (eval.c:12)
+==1257==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1257==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1257==    by 0x4E7369E: qsort_r (msort.c:297)
+==1257==    by 0x401B88: compare_hands (eval.c:170)
+==1257==    by 0x402AFD: main (test-eval.c:124)
+==1257==  Address 0x5207518 is 0 bytes after a block of size 40 alloc'd
+==1257==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1257==    by 0x401017: add_card_to (deck-c4.c:29)
+==1257==    by 0x403218: hand_from_string (input.c:49)
+==1257==    by 0x402AE6: main (test-eval.c:123)
+==1257== 
+==1257== Invalid read of size 4
+==1257==    at 0x40148F: card_ptr_comp (eval.c:15)
+==1257==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1257==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1257==    by 0x4E7369E: qsort_r (msort.c:297)
+==1257==    by 0x401B88: compare_hands (eval.c:170)
+==1257==    by 0x402AFD: main (test-eval.c:124)
+==1257==  Address 0x5207518 is 0 bytes after a block of size 40 alloc'd
+==1257==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1257==    by 0x401017: add_card_to (deck-c4.c:29)
+==1257==    by 0x403218: hand_from_string (input.c:49)
+==1257==    by 0x402AE6: main (test-eval.c:123)
+==1257== 
+==1257== 
+==1257== HEAP SUMMARY:
+==1257==     in use at exit: 0 bytes in 0 blocks
+==1257==   total heap usage: 232 allocs, 232 frees, 13,028 bytes allocated
+==1257== 
+==1257== All heap blocks were freed -- no leaks are possible
+==1257== 
+==1257== For counts of detected and suppressed errors, rerun with: -v
+==1257== ERROR SUMMARY: 10 errors from 6 contexts (suppressed: 0 from 0)
 Testcase 3: Trying hands with 2 pairs
  Checking the output 
 Line_3_did_not_match
@@ -1281,111 +1281,111 @@ Tie							      |	Hand 1 wins!
 ============================					============================
 Testcase 7: Trying hands with full houses
 Valgrind returned an error status
-==907== Memcheck, a memory error detector
-==907== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==907== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==907== Command: ./test-eval inp.7.txt
-==907== Parent PID: 906
-==907== 
-==907== Invalid read of size 4
-==907==    at 0x40146C: card_ptr_comp (eval.c:12)
-==907==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==907==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==907==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==907==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==907==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==907==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==907==    by 0x4E7369E: qsort_r (msort.c:297)
-==907==    by 0x401B88: compare_hands (eval.c:170)
-==907==    by 0x402AFD: main (test-eval.c:124)
-==907==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
-==907==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==907==    by 0x401017: add_card_to (deck-c4.c:29)
-==907==    by 0x403218: hand_from_string (input.c:49)
-==907==    by 0x402AE6: main (test-eval.c:123)
-==907== 
-==907== Invalid read of size 4
-==907==    at 0x40148F: card_ptr_comp (eval.c:15)
-==907==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==907==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==907==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==907==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==907==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==907==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==907==    by 0x4E7369E: qsort_r (msort.c:297)
-==907==    by 0x401B88: compare_hands (eval.c:170)
-==907==    by 0x402AFD: main (test-eval.c:124)
-==907==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
-==907==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==907==    by 0x401017: add_card_to (deck-c4.c:29)
-==907==    by 0x403218: hand_from_string (input.c:49)
-==907==    by 0x402AE6: main (test-eval.c:123)
-==907== 
-==907== Invalid read of size 4
-==907==    at 0x40146C: card_ptr_comp (eval.c:12)
-==907==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==907==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==907==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==907==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==907==    by 0x4E7369E: qsort_r (msort.c:297)
-==907==    by 0x401B88: compare_hands (eval.c:170)
-==907==    by 0x402AFD: main (test-eval.c:124)
-==907==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
-==907==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==907==    by 0x401017: add_card_to (deck-c4.c:29)
-==907==    by 0x403218: hand_from_string (input.c:49)
-==907==    by 0x402AE6: main (test-eval.c:123)
-==907== 
-==907== Invalid read of size 4
-==907==    at 0x40148F: card_ptr_comp (eval.c:15)
-==907==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==907==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==907==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==907==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==907==    by 0x4E7369E: qsort_r (msort.c:297)
-==907==    by 0x401B88: compare_hands (eval.c:170)
-==907==    by 0x402AFD: main (test-eval.c:124)
-==907==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
-==907==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==907==    by 0x401017: add_card_to (deck-c4.c:29)
-==907==    by 0x403218: hand_from_string (input.c:49)
-==907==    by 0x402AE6: main (test-eval.c:123)
-==907== 
-==907== Invalid read of size 4
-==907==    at 0x40146C: card_ptr_comp (eval.c:12)
-==907==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==907==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==907==    by 0x4E7369E: qsort_r (msort.c:297)
-==907==    by 0x401B88: compare_hands (eval.c:170)
-==907==    by 0x402AFD: main (test-eval.c:124)
-==907==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
-==907==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==907==    by 0x401017: add_card_to (deck-c4.c:29)
-==907==    by 0x403218: hand_from_string (input.c:49)
-==907==    by 0x402AE6: main (test-eval.c:123)
-==907== 
-==907== Invalid read of size 4
-==907==    at 0x40148F: card_ptr_comp (eval.c:15)
-==907==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==907==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==907==    by 0x4E7369E: qsort_r (msort.c:297)
-==907==    by 0x401B88: compare_hands (eval.c:170)
-==907==    by 0x402AFD: main (test-eval.c:124)
-==907==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
-==907==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==907==    by 0x401017: add_card_to (deck-c4.c:29)
-==907==    by 0x403218: hand_from_string (input.c:49)
-==907==    by 0x402AE6: main (test-eval.c:123)
-==907== 
-==907== 
-==907== HEAP SUMMARY:
-==907==     in use at exit: 0 bytes in 0 blocks
-==907==   total heap usage: 636 allocs, 636 frees, 21,404 bytes allocated
-==907== 
-==907== All heap blocks were freed -- no leaks are possible
-==907== 
-==907== For counts of detected and suppressed errors, rerun with: -v
-==907== ERROR SUMMARY: 24 errors from 6 contexts (suppressed: 0 from 0)
+==1314== Memcheck, a memory error detector
+==1314== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==1314== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==1314== Command: ./test-eval inp.7.txt
+==1314== Parent PID: 1313
+==1314== 
+==1314== Invalid read of size 4
+==1314==    at 0x40146C: card_ptr_comp (eval.c:12)
+==1314==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1314==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1314==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1314==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1314==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1314==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1314==    by 0x4E7369E: qsort_r (msort.c:297)
+==1314==    by 0x401B88: compare_hands (eval.c:170)
+==1314==    by 0x402AFD: main (test-eval.c:124)
+==1314==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
+==1314==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1314==    by 0x401017: add_card_to (deck-c4.c:29)
+==1314==    by 0x403218: hand_from_string (input.c:49)
+==1314==    by 0x402AE6: main (test-eval.c:123)
+==1314== 
+==1314== Invalid read of size 4
+==1314==    at 0x40148F: card_ptr_comp (eval.c:15)
+==1314==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1314==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1314==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1314==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1314==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1314==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1314==    by 0x4E7369E: qsort_r (msort.c:297)
+==1314==    by 0x401B88: compare_hands (eval.c:170)
+==1314==    by 0x402AFD: main (test-eval.c:124)
+==1314==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
+==1314==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1314==    by 0x401017: add_card_to (deck-c4.c:29)
+==1314==    by 0x403218: hand_from_string (input.c:49)
+==1314==    by 0x402AE6: main (test-eval.c:123)
+==1314== 
+==1314== Invalid read of size 4
+==1314==    at 0x40146C: card_ptr_comp (eval.c:12)
+==1314==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1314==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1314==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1314==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1314==    by 0x4E7369E: qsort_r (msort.c:297)
+==1314==    by 0x401B88: compare_hands (eval.c:170)
+==1314==    by 0x402AFD: main (test-eval.c:124)
+==1314==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
+==1314==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1314==    by 0x401017: add_card_to (deck-c4.c:29)
+==1314==    by 0x403218: hand_from_string (input.c:49)
+==1314==    by 0x402AE6: main (test-eval.c:123)
+==1314== 
+==1314== Invalid read of size 4
+==1314==    at 0x40148F: card_ptr_comp (eval.c:15)
+==1314==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1314==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1314==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1314==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1314==    by 0x4E7369E: qsort_r (msort.c:297)
+==1314==    by 0x401B88: compare_hands (eval.c:170)
+==1314==    by 0x402AFD: main (test-eval.c:124)
+==1314==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
+==1314==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1314==    by 0x401017: add_card_to (deck-c4.c:29)
+==1314==    by 0x403218: hand_from_string (input.c:49)
+==1314==    by 0x402AE6: main (test-eval.c:123)
+==1314== 
+==1314== Invalid read of size 4
+==1314==    at 0x40146C: card_ptr_comp (eval.c:12)
+==1314==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1314==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1314==    by 0x4E7369E: qsort_r (msort.c:297)
+==1314==    by 0x401B88: compare_hands (eval.c:170)
+==1314==    by 0x402AFD: main (test-eval.c:124)
+==1314==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
+==1314==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1314==    by 0x401017: add_card_to (deck-c4.c:29)
+==1314==    by 0x403218: hand_from_string (input.c:49)
+==1314==    by 0x402AE6: main (test-eval.c:123)
+==1314== 
+==1314== Invalid read of size 4
+==1314==    at 0x40148F: card_ptr_comp (eval.c:15)
+==1314==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1314==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1314==    by 0x4E7369E: qsort_r (msort.c:297)
+==1314==    by 0x401B88: compare_hands (eval.c:170)
+==1314==    by 0x402AFD: main (test-eval.c:124)
+==1314==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
+==1314==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1314==    by 0x401017: add_card_to (deck-c4.c:29)
+==1314==    by 0x403218: hand_from_string (input.c:49)
+==1314==    by 0x402AE6: main (test-eval.c:123)
+==1314== 
+==1314== 
+==1314== HEAP SUMMARY:
+==1314==     in use at exit: 0 bytes in 0 blocks
+==1314==   total heap usage: 636 allocs, 636 frees, 21,404 bytes allocated
+==1314== 
+==1314== All heap blocks were freed -- no leaks are possible
+==1314== 
+==1314== For counts of detected and suppressed errors, rerun with: -v
+==1314== ERROR SUMMARY: 24 errors from 6 contexts (suppressed: 0 from 0)
 Testcase 8: Trying hands with 4 of a kind
  Checking the output 
 Line_3_did_not_match
@@ -1710,193 +1710,193 @@ Hand 1 wins!						      |	Hand 2 wins!
 ============================					============================
 Testcase 10: Trying each type of hand ranking
 Valgrind returned an error status
-==938== Memcheck, a memory error detector
-==938== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==938== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==938== Command: ./test-eval inp.10.txt
-==938== Parent PID: 937
-==938== 
-==938== Invalid read of size 4
-==938==    at 0x40146C: card_ptr_comp (eval.c:12)
-==938==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==938==    by 0x4E7369E: qsort_r (msort.c:297)
-==938==    by 0x401B88: compare_hands (eval.c:170)
-==938==    by 0x402AFD: main (test-eval.c:124)
-==938==  Address 0x520b2b8 is 0 bytes after a block of size 40 alloc'd
-==938==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==938==    by 0x401017: add_card_to (deck-c4.c:29)
-==938==    by 0x403218: hand_from_string (input.c:49)
-==938==    by 0x402AE6: main (test-eval.c:123)
-==938== 
-==938== Invalid read of size 4
-==938==    at 0x40148F: card_ptr_comp (eval.c:15)
-==938==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==938==    by 0x4E7369E: qsort_r (msort.c:297)
-==938==    by 0x401B88: compare_hands (eval.c:170)
-==938==    by 0x402AFD: main (test-eval.c:124)
-==938==  Address 0x520b2b8 is 0 bytes after a block of size 40 alloc'd
-==938==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==938==    by 0x401017: add_card_to (deck-c4.c:29)
-==938==    by 0x403218: hand_from_string (input.c:49)
-==938==    by 0x402AE6: main (test-eval.c:123)
-==938== 
-==938== Invalid read of size 4
-==938==    at 0x40146C: card_ptr_comp (eval.c:12)
-==938==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==938==    by 0x4E7369E: qsort_r (msort.c:297)
-==938==    by 0x401B88: compare_hands (eval.c:170)
-==938==    by 0x402AFD: main (test-eval.c:124)
-==938==  Address 0x520b2b8 is 0 bytes after a block of size 40 alloc'd
-==938==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==938==    by 0x401017: add_card_to (deck-c4.c:29)
-==938==    by 0x403218: hand_from_string (input.c:49)
-==938==    by 0x402AE6: main (test-eval.c:123)
-==938== 
-==938== Invalid read of size 4
-==938==    at 0x40148F: card_ptr_comp (eval.c:15)
-==938==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==938==    by 0x4E7369E: qsort_r (msort.c:297)
-==938==    by 0x401B88: compare_hands (eval.c:170)
-==938==    by 0x402AFD: main (test-eval.c:124)
-==938==  Address 0x520b2b8 is 0 bytes after a block of size 40 alloc'd
-==938==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==938==    by 0x401017: add_card_to (deck-c4.c:29)
-==938==    by 0x403218: hand_from_string (input.c:49)
-==938==    by 0x402AE6: main (test-eval.c:123)
-==938== 
-==938== Invalid read of size 4
-==938==    at 0x40146C: card_ptr_comp (eval.c:12)
-==938==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==938==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==938==    by 0x4E7369E: qsort_r (msort.c:297)
-==938==    by 0x401B88: compare_hands (eval.c:170)
-==938==    by 0x402AFD: main (test-eval.c:124)
-==938==  Address 0x520b2b8 is 0 bytes after a block of size 40 alloc'd
-==938==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==938==    by 0x401017: add_card_to (deck-c4.c:29)
-==938==    by 0x403218: hand_from_string (input.c:49)
-==938==    by 0x402AE6: main (test-eval.c:123)
-==938== 
-==938== Invalid read of size 4
-==938==    at 0x40148F: card_ptr_comp (eval.c:15)
-==938==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==938==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==938==    by 0x4E7369E: qsort_r (msort.c:297)
-==938==    by 0x401B88: compare_hands (eval.c:170)
-==938==    by 0x402AFD: main (test-eval.c:124)
-==938==  Address 0x520b2b8 is 0 bytes after a block of size 40 alloc'd
-==938==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==938==    by 0x401017: add_card_to (deck-c4.c:29)
-==938==    by 0x403218: hand_from_string (input.c:49)
-==938==    by 0x402AE6: main (test-eval.c:123)
-==938== 
-==938== Invalid read of size 4
-==938==    at 0x401466: card_ptr_comp (eval.c:12)
-==938==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==938==    by 0x4E7369E: qsort_r (msort.c:297)
-==938==    by 0x401B88: compare_hands (eval.c:170)
-==938==    by 0x402AFD: main (test-eval.c:124)
-==938==  Address 0x521eed8 is 0 bytes after a block of size 40 alloc'd
-==938==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==938==    by 0x401017: add_card_to (deck-c4.c:29)
-==938==    by 0x403218: hand_from_string (input.c:49)
-==938==    by 0x402AE6: main (test-eval.c:123)
-==938== 
-==938== Invalid read of size 4
-==938==    at 0x401476: card_ptr_comp (eval.c:13)
-==938==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==938==    by 0x4E7369E: qsort_r (msort.c:297)
-==938==    by 0x401B88: compare_hands (eval.c:170)
-==938==    by 0x402AFD: main (test-eval.c:124)
-==938==  Address 0x521eee4 is 12 bytes after a block of size 40 alloc'd
-==938==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==938==    by 0x401017: add_card_to (deck-c4.c:29)
-==938==    by 0x403218: hand_from_string (input.c:49)
-==938==    by 0x402AE6: main (test-eval.c:123)
-==938== 
-==938== Invalid read of size 4
-==938==    at 0x40147F: card_ptr_comp (eval.c:13)
-==938==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==938==    by 0x4E7369E: qsort_r (msort.c:297)
-==938==    by 0x401B88: compare_hands (eval.c:170)
-==938==    by 0x402AFD: main (test-eval.c:124)
-==938==  Address 0x521eedc is 4 bytes after a block of size 40 alloc'd
-==938==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==938==    by 0x401017: add_card_to (deck-c4.c:29)
-==938==    by 0x403218: hand_from_string (input.c:49)
-==938==    by 0x402AE6: main (test-eval.c:123)
-==938== 
-==938== Invalid read of size 8
-==938==    at 0x4E73236: msort_with_tmp.part.0 (msort.c:85)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==938==    by 0x4E7369E: qsort_r (msort.c:297)
-==938==    by 0x401B88: compare_hands (eval.c:170)
-==938==    by 0x402AFD: main (test-eval.c:124)
-==938==  Address 0x521eed8 is 0 bytes after a block of size 40 alloc'd
-==938==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==938==    by 0x401017: add_card_to (deck-c4.c:29)
-==938==    by 0x403218: hand_from_string (input.c:49)
-==938==    by 0x402AE6: main (test-eval.c:123)
-==938== 
-==938== Invalid write of size 8
-==938==    at 0x4C32D2B: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==938==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==938==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==938==    by 0x4E7369E: qsort_r (msort.c:297)
-==938==    by 0x401B88: compare_hands (eval.c:170)
-==938==    by 0x402AFD: main (test-eval.c:124)
-==938==  Address 0x521eed8 is 0 bytes after a block of size 40 alloc'd
-==938==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==938==    by 0x401017: add_card_to (deck-c4.c:29)
-==938==    by 0x403218: hand_from_string (input.c:49)
-==938==    by 0x402AE6: main (test-eval.c:123)
-==938== 
-==938== 
-==938== HEAP SUMMARY:
-==938==     in use at exit: 0 bytes in 0 blocks
-==938==   total heap usage: 4,020 allocs, 4,020 frees, 81,344 bytes allocated
-==938== 
-==938== All heap blocks were freed -- no leaks are possible
-==938== 
-==938== For counts of detected and suppressed errors, rerun with: -v
-==938== ERROR SUMMARY: 302 errors from 11 contexts (suppressed: 0 from 0)
+==1345== Memcheck, a memory error detector
+==1345== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==1345== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==1345== Command: ./test-eval inp.10.txt
+==1345== Parent PID: 1344
+==1345== 
+==1345== Invalid read of size 4
+==1345==    at 0x40146C: card_ptr_comp (eval.c:12)
+==1345==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E7369E: qsort_r (msort.c:297)
+==1345==    by 0x401B88: compare_hands (eval.c:170)
+==1345==    by 0x402AFD: main (test-eval.c:124)
+==1345==  Address 0x520b2b8 is 0 bytes after a block of size 40 alloc'd
+==1345==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1345==    by 0x401017: add_card_to (deck-c4.c:29)
+==1345==    by 0x403218: hand_from_string (input.c:49)
+==1345==    by 0x402AE6: main (test-eval.c:123)
+==1345== 
+==1345== Invalid read of size 4
+==1345==    at 0x40148F: card_ptr_comp (eval.c:15)
+==1345==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E7369E: qsort_r (msort.c:297)
+==1345==    by 0x401B88: compare_hands (eval.c:170)
+==1345==    by 0x402AFD: main (test-eval.c:124)
+==1345==  Address 0x520b2b8 is 0 bytes after a block of size 40 alloc'd
+==1345==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1345==    by 0x401017: add_card_to (deck-c4.c:29)
+==1345==    by 0x403218: hand_from_string (input.c:49)
+==1345==    by 0x402AE6: main (test-eval.c:123)
+==1345== 
+==1345== Invalid read of size 4
+==1345==    at 0x40146C: card_ptr_comp (eval.c:12)
+==1345==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E7369E: qsort_r (msort.c:297)
+==1345==    by 0x401B88: compare_hands (eval.c:170)
+==1345==    by 0x402AFD: main (test-eval.c:124)
+==1345==  Address 0x520b2b8 is 0 bytes after a block of size 40 alloc'd
+==1345==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1345==    by 0x401017: add_card_to (deck-c4.c:29)
+==1345==    by 0x403218: hand_from_string (input.c:49)
+==1345==    by 0x402AE6: main (test-eval.c:123)
+==1345== 
+==1345== Invalid read of size 4
+==1345==    at 0x40148F: card_ptr_comp (eval.c:15)
+==1345==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E7369E: qsort_r (msort.c:297)
+==1345==    by 0x401B88: compare_hands (eval.c:170)
+==1345==    by 0x402AFD: main (test-eval.c:124)
+==1345==  Address 0x520b2b8 is 0 bytes after a block of size 40 alloc'd
+==1345==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1345==    by 0x401017: add_card_to (deck-c4.c:29)
+==1345==    by 0x403218: hand_from_string (input.c:49)
+==1345==    by 0x402AE6: main (test-eval.c:123)
+==1345== 
+==1345== Invalid read of size 4
+==1345==    at 0x40146C: card_ptr_comp (eval.c:12)
+==1345==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1345==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E7369E: qsort_r (msort.c:297)
+==1345==    by 0x401B88: compare_hands (eval.c:170)
+==1345==    by 0x402AFD: main (test-eval.c:124)
+==1345==  Address 0x520b2b8 is 0 bytes after a block of size 40 alloc'd
+==1345==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1345==    by 0x401017: add_card_to (deck-c4.c:29)
+==1345==    by 0x403218: hand_from_string (input.c:49)
+==1345==    by 0x402AE6: main (test-eval.c:123)
+==1345== 
+==1345== Invalid read of size 4
+==1345==    at 0x40148F: card_ptr_comp (eval.c:15)
+==1345==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1345==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E7369E: qsort_r (msort.c:297)
+==1345==    by 0x401B88: compare_hands (eval.c:170)
+==1345==    by 0x402AFD: main (test-eval.c:124)
+==1345==  Address 0x520b2b8 is 0 bytes after a block of size 40 alloc'd
+==1345==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1345==    by 0x401017: add_card_to (deck-c4.c:29)
+==1345==    by 0x403218: hand_from_string (input.c:49)
+==1345==    by 0x402AE6: main (test-eval.c:123)
+==1345== 
+==1345== Invalid read of size 4
+==1345==    at 0x401466: card_ptr_comp (eval.c:12)
+==1345==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E7369E: qsort_r (msort.c:297)
+==1345==    by 0x401B88: compare_hands (eval.c:170)
+==1345==    by 0x402AFD: main (test-eval.c:124)
+==1345==  Address 0x521eed8 is 0 bytes after a block of size 40 alloc'd
+==1345==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1345==    by 0x401017: add_card_to (deck-c4.c:29)
+==1345==    by 0x403218: hand_from_string (input.c:49)
+==1345==    by 0x402AE6: main (test-eval.c:123)
+==1345== 
+==1345== Invalid read of size 4
+==1345==    at 0x401476: card_ptr_comp (eval.c:13)
+==1345==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E7369E: qsort_r (msort.c:297)
+==1345==    by 0x401B88: compare_hands (eval.c:170)
+==1345==    by 0x402AFD: main (test-eval.c:124)
+==1345==  Address 0x521eee4 is 12 bytes after a block of size 40 alloc'd
+==1345==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1345==    by 0x401017: add_card_to (deck-c4.c:29)
+==1345==    by 0x403218: hand_from_string (input.c:49)
+==1345==    by 0x402AE6: main (test-eval.c:123)
+==1345== 
+==1345== Invalid read of size 4
+==1345==    at 0x40147F: card_ptr_comp (eval.c:13)
+==1345==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E7369E: qsort_r (msort.c:297)
+==1345==    by 0x401B88: compare_hands (eval.c:170)
+==1345==    by 0x402AFD: main (test-eval.c:124)
+==1345==  Address 0x521eedc is 4 bytes after a block of size 40 alloc'd
+==1345==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1345==    by 0x401017: add_card_to (deck-c4.c:29)
+==1345==    by 0x403218: hand_from_string (input.c:49)
+==1345==    by 0x402AE6: main (test-eval.c:123)
+==1345== 
+==1345== Invalid read of size 8
+==1345==    at 0x4E73236: msort_with_tmp.part.0 (msort.c:85)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E7369E: qsort_r (msort.c:297)
+==1345==    by 0x401B88: compare_hands (eval.c:170)
+==1345==    by 0x402AFD: main (test-eval.c:124)
+==1345==  Address 0x521eed8 is 0 bytes after a block of size 40 alloc'd
+==1345==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1345==    by 0x401017: add_card_to (deck-c4.c:29)
+==1345==    by 0x403218: hand_from_string (input.c:49)
+==1345==    by 0x402AE6: main (test-eval.c:123)
+==1345== 
+==1345== Invalid write of size 8
+==1345==    at 0x4C32D2B: __GI_memcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==1345==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==1345==    by 0x4E7369E: qsort_r (msort.c:297)
+==1345==    by 0x401B88: compare_hands (eval.c:170)
+==1345==    by 0x402AFD: main (test-eval.c:124)
+==1345==  Address 0x521eed8 is 0 bytes after a block of size 40 alloc'd
+==1345==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1345==    by 0x401017: add_card_to (deck-c4.c:29)
+==1345==    by 0x403218: hand_from_string (input.c:49)
+==1345==    by 0x402AE6: main (test-eval.c:123)
+==1345== 
+==1345== 
+==1345== HEAP SUMMARY:
+==1345==     in use at exit: 0 bytes in 0 blocks
+==1345==   total heap usage: 4,020 allocs, 4,020 frees, 81,344 bytes allocated
+==1345== 
+==1345== All heap blocks were freed -- no leaks are possible
+==1345== 
+==1345== For counts of detected and suppressed errors, rerun with: -v
+==1345== ERROR SUMMARY: 302 errors from 11 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
