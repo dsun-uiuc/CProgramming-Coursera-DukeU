@@ -11,6 +11,12 @@ int card_ptr_comp(const void * vp1, const void * vp2) {
   int result = 0;
   //int v1 = (**cp1).value;
   //int v2 = (**cp2).value;
+  if(*cp1 == NULL && *cp2 == NULL)
+    return 0;
+  if(*cp1 == NULL && *cp2 != NULL)
+    return 1;
+  if(*cp1 != NULL && *cp2 == NULL)
+    return -1;
   if ((*cp1)->value == (*cp2)->value)
     result = (int)(*cp2)->suit - (int)(*cp1)->suit;
   else
