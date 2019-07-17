@@ -1,4 +1,4 @@
-Grading at Wed Jul 17 05:26:55 UTC 2019
+Grading at Wed Jul 17 06:04:02 UTC 2019
 Compiling your code
 rm -f test poker cards.o my-test-main.o *~
 cc -ggdb3 -Wall -Werror -pedantic -std=gnu99   -c -o deck.o deck.c
@@ -11,75 +11,75 @@ Your file matched the expected output
  - Testcase passed
 Testcase 2: Trying hands with pairs
 Valgrind returned an error status
-==406== Memcheck, a memory error detector
-==406== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==406== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==406== Command: ./test-eval inp.2.txt
-==406== Parent PID: 405
-==406== 
-==406== Invalid read of size 8
-==406==    at 0x40146A: card_ptr_comp (eval.c:10)
-==406==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==406==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==406==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==406==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==406==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==406==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==406==    by 0x4E7369E: qsort_r (msort.c:297)
-==406==    by 0x401B8A: compare_hands (eval.c:164)
-==406==    by 0x402AFF: main (test-eval.c:124)
-==406==  Address 0x5207518 is 0 bytes after a block of size 40 alloc'd
-==406==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==406==    by 0x401017: add_card_to (deck-c4.c:29)
-==406==    by 0x40321A: hand_from_string (input.c:49)
-==406==    by 0x402AE8: main (test-eval.c:123)
-==406== 
-==406== Invalid read of size 4
-==406==    at 0x401475: card_ptr_comp (eval.c:11)
-==406==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==406==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==406==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==406==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==406==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==406==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==406==    by 0x4E7369E: qsort_r (msort.c:297)
-==406==    by 0x401B8A: compare_hands (eval.c:164)
-==406==    by 0x402AFF: main (test-eval.c:124)
-==406==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==406== 
-==406== 
-==406== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==406==  Access not within mapped region at address 0x0
-==406==    at 0x401475: card_ptr_comp (eval.c:11)
-==406==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==406==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==406==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==406==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==406==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==406==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==406==    by 0x4E7369E: qsort_r (msort.c:297)
-==406==    by 0x401B8A: compare_hands (eval.c:164)
-==406==    by 0x402AFF: main (test-eval.c:124)
-==406==  If you believe this happened as a result of a stack
-==406==  overflow in your program's main thread (unlikely but
-==406==  possible), you can try to increase the size of the
-==406==  main thread stack using the --main-stacksize= flag.
-==406==  The main thread stack size used in this run was 8388608.
-==406== 
-==406== HEAP SUMMARY:
-==406==     in use at exit: 880 bytes in 17 blocks
-==406==   total heap usage: 56 allocs, 39 frees, 9,768 bytes allocated
-==406== 
-==406== LEAK SUMMARY:
-==406==    definitely lost: 0 bytes in 0 blocks
-==406==    indirectly lost: 0 bytes in 0 blocks
-==406==      possibly lost: 0 bytes in 0 blocks
-==406==    still reachable: 880 bytes in 17 blocks
-==406==         suppressed: 0 bytes in 0 blocks
-==406== Rerun with --leak-check=full to see details of leaked memory
-==406== 
-==406== For counts of detected and suppressed errors, rerun with: -v
-==406== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==331== Memcheck, a memory error detector
+==331== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==331== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==331== Command: ./test-eval inp.2.txt
+==331== Parent PID: 330
+==331== 
+==331== Invalid read of size 8
+==331==    at 0x40145F: card_ptr_comp (eval.c:11)
+==331==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==331==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==331==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==331==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==331==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==331==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==331==    by 0x4E7369E: qsort_r (msort.c:297)
+==331==    by 0x401B86: compare_hands (eval.c:164)
+==331==    by 0x402AFB: main (test-eval.c:124)
+==331==  Address 0x5207518 is 0 bytes after a block of size 40 alloc'd
+==331==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==331==    by 0x401017: add_card_to (deck-c4.c:29)
+==331==    by 0x403216: hand_from_string (input.c:49)
+==331==    by 0x402AE4: main (test-eval.c:123)
+==331== 
+==331== Invalid read of size 4
+==331==    at 0x401462: card_ptr_comp (eval.c:11)
+==331==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==331==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==331==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==331==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==331==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==331==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==331==    by 0x4E7369E: qsort_r (msort.c:297)
+==331==    by 0x401B86: compare_hands (eval.c:164)
+==331==    by 0x402AFB: main (test-eval.c:124)
+==331==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==331== 
+==331== 
+==331== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==331==  Access not within mapped region at address 0x0
+==331==    at 0x401462: card_ptr_comp (eval.c:11)
+==331==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==331==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==331==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==331==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==331==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==331==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==331==    by 0x4E7369E: qsort_r (msort.c:297)
+==331==    by 0x401B86: compare_hands (eval.c:164)
+==331==    by 0x402AFB: main (test-eval.c:124)
+==331==  If you believe this happened as a result of a stack
+==331==  overflow in your program's main thread (unlikely but
+==331==  possible), you can try to increase the size of the
+==331==  main thread stack using the --main-stacksize= flag.
+==331==  The main thread stack size used in this run was 8388608.
+==331== 
+==331== HEAP SUMMARY:
+==331==     in use at exit: 880 bytes in 17 blocks
+==331==   total heap usage: 56 allocs, 39 frees, 9,768 bytes allocated
+==331== 
+==331== LEAK SUMMARY:
+==331==    definitely lost: 0 bytes in 0 blocks
+==331==    indirectly lost: 0 bytes in 0 blocks
+==331==      possibly lost: 0 bytes in 0 blocks
+==331==    still reachable: 880 bytes in 17 blocks
+==331==         suppressed: 0 bytes in 0 blocks
+==331== Rerun with --leak-check=full to see details of leaked memory
+==331== 
+==331== For counts of detected and suppressed errors, rerun with: -v
+==331== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 Testcase 3: Trying hands with 2 pairs
  Checking the output 
 Your file matched the expected output
@@ -98,75 +98,75 @@ Your file matched the expected output
  - Testcase passed
 Testcase 7: Trying hands with full houses
 Valgrind returned an error status
-==459== Memcheck, a memory error detector
-==459== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==459== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==459== Command: ./test-eval inp.7.txt
-==459== Parent PID: 458
-==459== 
-==459== Invalid read of size 8
-==459==    at 0x40146A: card_ptr_comp (eval.c:10)
-==459==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==459==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==459==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==459==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==459==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==459==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==459==    by 0x4E7369E: qsort_r (msort.c:297)
-==459==    by 0x401B8A: compare_hands (eval.c:164)
-==459==    by 0x402AFF: main (test-eval.c:124)
-==459==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
-==459==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==459==    by 0x401017: add_card_to (deck-c4.c:29)
-==459==    by 0x40321A: hand_from_string (input.c:49)
-==459==    by 0x402AE8: main (test-eval.c:123)
-==459== 
-==459== Invalid read of size 4
-==459==    at 0x401475: card_ptr_comp (eval.c:11)
-==459==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==459==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==459==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==459==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==459==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==459==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==459==    by 0x4E7369E: qsort_r (msort.c:297)
-==459==    by 0x401B8A: compare_hands (eval.c:164)
-==459==    by 0x402AFF: main (test-eval.c:124)
-==459==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==459== 
-==459== 
-==459== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==459==  Access not within mapped region at address 0x0
-==459==    at 0x401475: card_ptr_comp (eval.c:11)
-==459==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==459==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==459==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==459==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==459==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==459==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==459==    by 0x4E7369E: qsort_r (msort.c:297)
-==459==    by 0x401B8A: compare_hands (eval.c:164)
-==459==    by 0x402AFF: main (test-eval.c:124)
-==459==  If you believe this happened as a result of a stack
-==459==  overflow in your program's main thread (unlikely but
-==459==  possible), you can try to increase the size of the
-==459==  main thread stack using the --main-stacksize= flag.
-==459==  The main thread stack size used in this run was 8388608.
-==459== 
-==459== HEAP SUMMARY:
-==459==     in use at exit: 912 bytes in 19 blocks
-==459==   total heap usage: 386 allocs, 367 frees, 16,504 bytes allocated
-==459== 
-==459== LEAK SUMMARY:
-==459==    definitely lost: 0 bytes in 0 blocks
-==459==    indirectly lost: 0 bytes in 0 blocks
-==459==      possibly lost: 0 bytes in 0 blocks
-==459==    still reachable: 912 bytes in 19 blocks
-==459==         suppressed: 0 bytes in 0 blocks
-==459== Rerun with --leak-check=full to see details of leaked memory
-==459== 
-==459== For counts of detected and suppressed errors, rerun with: -v
-==459== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==384== Memcheck, a memory error detector
+==384== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==384== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==384== Command: ./test-eval inp.7.txt
+==384== Parent PID: 383
+==384== 
+==384== Invalid read of size 8
+==384==    at 0x40145F: card_ptr_comp (eval.c:11)
+==384==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==384==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==384==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==384==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==384==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==384==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==384==    by 0x4E7369E: qsort_r (msort.c:297)
+==384==    by 0x401B86: compare_hands (eval.c:164)
+==384==    by 0x402AFB: main (test-eval.c:124)
+==384==  Address 0x520e940 is 0 bytes after a block of size 48 alloc'd
+==384==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==384==    by 0x401017: add_card_to (deck-c4.c:29)
+==384==    by 0x403216: hand_from_string (input.c:49)
+==384==    by 0x402AE4: main (test-eval.c:123)
+==384== 
+==384== Invalid read of size 4
+==384==    at 0x401462: card_ptr_comp (eval.c:11)
+==384==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==384==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==384==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==384==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==384==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==384==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==384==    by 0x4E7369E: qsort_r (msort.c:297)
+==384==    by 0x401B86: compare_hands (eval.c:164)
+==384==    by 0x402AFB: main (test-eval.c:124)
+==384==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==384== 
+==384== 
+==384== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==384==  Access not within mapped region at address 0x0
+==384==    at 0x401462: card_ptr_comp (eval.c:11)
+==384==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==384==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==384==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==384==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==384==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==384==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==384==    by 0x4E7369E: qsort_r (msort.c:297)
+==384==    by 0x401B86: compare_hands (eval.c:164)
+==384==    by 0x402AFB: main (test-eval.c:124)
+==384==  If you believe this happened as a result of a stack
+==384==  overflow in your program's main thread (unlikely but
+==384==  possible), you can try to increase the size of the
+==384==  main thread stack using the --main-stacksize= flag.
+==384==  The main thread stack size used in this run was 8388608.
+==384== 
+==384== HEAP SUMMARY:
+==384==     in use at exit: 912 bytes in 19 blocks
+==384==   total heap usage: 386 allocs, 367 frees, 16,504 bytes allocated
+==384== 
+==384== LEAK SUMMARY:
+==384==    definitely lost: 0 bytes in 0 blocks
+==384==    indirectly lost: 0 bytes in 0 blocks
+==384==      possibly lost: 0 bytes in 0 blocks
+==384==    still reachable: 912 bytes in 19 blocks
+==384==         suppressed: 0 bytes in 0 blocks
+==384== Rerun with --leak-check=full to see details of leaked memory
+==384== 
+==384== For counts of detected and suppressed errors, rerun with: -v
+==384== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 Testcase 8: Trying hands with 4 of a kind
  Checking the output 
 Your file matched the expected output
@@ -177,74 +177,74 @@ Your file matched the expected output
  - Testcase passed
 Testcase 10: Trying each type of hand ranking
 Valgrind returned an error status
-==488== Memcheck, a memory error detector
-==488== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==488== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==488== Command: ./test-eval inp.10.txt
-==488== Parent PID: 487
-==488== 
-==488== Invalid read of size 8
-==488==    at 0x40146A: card_ptr_comp (eval.c:10)
-==488==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==488==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==488==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==488==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==488==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==488==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==488==    by 0x4E7369E: qsort_r (msort.c:297)
-==488==    by 0x401B8A: compare_hands (eval.c:164)
-==488==    by 0x402AFF: main (test-eval.c:124)
-==488==  Address 0x520b2b8 is 0 bytes after a block of size 40 alloc'd
-==488==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==488==    by 0x401017: add_card_to (deck-c4.c:29)
-==488==    by 0x40321A: hand_from_string (input.c:49)
-==488==    by 0x402AE8: main (test-eval.c:123)
-==488== 
-==488== Invalid read of size 4
-==488==    at 0x401475: card_ptr_comp (eval.c:11)
-==488==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==488==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==488==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==488==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==488==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==488==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==488==    by 0x4E7369E: qsort_r (msort.c:297)
-==488==    by 0x401B8A: compare_hands (eval.c:164)
-==488==    by 0x402AFF: main (test-eval.c:124)
-==488==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==488== 
-==488== 
-==488== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==488==  Access not within mapped region at address 0x0
-==488==    at 0x401475: card_ptr_comp (eval.c:11)
-==488==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
-==488==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==488==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==488==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
-==488==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
-==488==    by 0x4E7369E: msort_with_tmp (msort.c:45)
-==488==    by 0x4E7369E: qsort_r (msort.c:297)
-==488==    by 0x401B8A: compare_hands (eval.c:164)
-==488==    by 0x402AFF: main (test-eval.c:124)
-==488==  If you believe this happened as a result of a stack
-==488==  overflow in your program's main thread (unlikely but
-==488==  possible), you can try to increase the size of the
-==488==  main thread stack using the --main-stacksize= flag.
-==488==  The main thread stack size used in this run was 8388608.
-==488== 
-==488== HEAP SUMMARY:
-==488==     in use at exit: 880 bytes in 17 blocks
-==488==   total heap usage: 234 allocs, 217 frees, 13,124 bytes allocated
-==488== 
-==488== LEAK SUMMARY:
-==488==    definitely lost: 0 bytes in 0 blocks
-==488==    indirectly lost: 0 bytes in 0 blocks
-==488==      possibly lost: 0 bytes in 0 blocks
-==488==    still reachable: 880 bytes in 17 blocks
-==488==         suppressed: 0 bytes in 0 blocks
-==488== Rerun with --leak-check=full to see details of leaked memory
-==488== 
-==488== For counts of detected and suppressed errors, rerun with: -v
-==488== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+==413== Memcheck, a memory error detector
+==413== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==413== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==413== Command: ./test-eval inp.10.txt
+==413== Parent PID: 412
+==413== 
+==413== Invalid read of size 8
+==413==    at 0x40145F: card_ptr_comp (eval.c:11)
+==413==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==413==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==413==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==413==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==413==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==413==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==413==    by 0x4E7369E: qsort_r (msort.c:297)
+==413==    by 0x401B86: compare_hands (eval.c:164)
+==413==    by 0x402AFB: main (test-eval.c:124)
+==413==  Address 0x520b2b8 is 0 bytes after a block of size 40 alloc'd
+==413==    at 0x4C2FD5F: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==413==    by 0x401017: add_card_to (deck-c4.c:29)
+==413==    by 0x403216: hand_from_string (input.c:49)
+==413==    by 0x402AE4: main (test-eval.c:123)
+==413== 
+==413== Invalid read of size 4
+==413==    at 0x401462: card_ptr_comp (eval.c:11)
+==413==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==413==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==413==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==413==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==413==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==413==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==413==    by 0x4E7369E: qsort_r (msort.c:297)
+==413==    by 0x401B86: compare_hands (eval.c:164)
+==413==    by 0x402AFB: main (test-eval.c:124)
+==413==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==413== 
+==413== 
+==413== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==413==  Access not within mapped region at address 0x0
+==413==    at 0x401462: card_ptr_comp (eval.c:11)
+==413==    by 0x4E73231: msort_with_tmp.part.0 (msort.c:83)
+==413==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==413==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==413==    by 0x4E72EDC: msort_with_tmp (msort.c:45)
+==413==    by 0x4E72EDC: msort_with_tmp.part.0 (msort.c:54)
+==413==    by 0x4E7369E: msort_with_tmp (msort.c:45)
+==413==    by 0x4E7369E: qsort_r (msort.c:297)
+==413==    by 0x401B86: compare_hands (eval.c:164)
+==413==    by 0x402AFB: main (test-eval.c:124)
+==413==  If you believe this happened as a result of a stack
+==413==  overflow in your program's main thread (unlikely but
+==413==  possible), you can try to increase the size of the
+==413==  main thread stack using the --main-stacksize= flag.
+==413==  The main thread stack size used in this run was 8388608.
+==413== 
+==413== HEAP SUMMARY:
+==413==     in use at exit: 880 bytes in 17 blocks
+==413==   total heap usage: 234 allocs, 217 frees, 13,124 bytes allocated
+==413== 
+==413== LEAK SUMMARY:
+==413==    definitely lost: 0 bytes in 0 blocks
+==413==    indirectly lost: 0 bytes in 0 blocks
+==413==      possibly lost: 0 bytes in 0 blocks
+==413==    still reachable: 880 bytes in 17 blocks
+==413==         suppressed: 0 bytes in 0 blocks
+==413== Rerun with --leak-check=full to see details of leaked memory
+==413== 
+==413== For counts of detected and suppressed errors, rerun with: -v
+==413== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
 
 Overall Grade: C
