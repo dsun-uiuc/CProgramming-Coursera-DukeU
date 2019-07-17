@@ -10,28 +10,40 @@ void assert_card_valid(card_t c) {
 }
 
 const char * ranking_to_string(hand_ranking_t r) {
+  const char * rk = NULL;
   switch(r) {
   case STRAIGHT_FLUSH:
-    return "STRAIGHT_FLUSH";
+    rk = "STRAIGHT_FLUSH";
+    break;
   case FOUR_OF_A_KIND:
-    return "FOUR_OF_A_KIND";
+    rk = "FOUR_OF_A_KIND";
+    break;
   case FULL_HOUSE:
-    return "FULL_HOUSE";
+    rk= "FULL_HOUSE";
+    break;
   case FLUSH:
-    return "FLUSH";
+    rk = "FLUSH";
+    break;
   case STRAIGHT:
-    return "STRAIGHT";
+    rk =  "STRAIGHT";
+    break;
   case THREE_OF_A_KIND:
-    return "THREE_OF_A_KIND";
+    rk = "THREE_OF_A_KIND";
+    break;
   case TWO_PAIR:
-    return "TWO_PAIR";
+    rk = "TWO_PAIR";
+    break;
   case PAIR:
-    return "PAIR";
+    rk = "PAIR";
+    break;
   case NOTHING:
-    return "NOTHING";
+    rk = "NOTHING";
+    break;
   default:
-    assert(0);
+    // assert(0);
+    break;
   }
+  return rk;
 }
 
 char value_letter(card_t c) {
@@ -61,8 +73,8 @@ char value_letter(card_t c) {
     x = 'A';
     break;
   default:
-    printf("\nInvalid card value!\n");
-    assert(0);
+    //printf("\nInvalid card value!\n");
+    // assert(0);
     break;
   }
   return x;
@@ -85,8 +97,8 @@ char suit_letter(card_t c) {
     x = 'c';
     break;
   default:
-    printf("\nInvalid suit!\n");
-    assert(0);
+    // printf("\nInvalid suit!\n");
+    //assert(0);
     break;
   }
   return x;
@@ -128,7 +140,8 @@ card_t card_from_letters(char value_let, char suit_let) {
     val = VALUE_ACE;
     break;
   default:
-    assert(0);
+    //assert(0);
+    break;
   }   
   temp.value = val;
 
@@ -147,7 +160,8 @@ card_t card_from_letters(char value_let, char suit_let) {
     temp.suit = CLUBS;
     break;
   default:
-    assert(0);
+    // assert(0);
+    break;
 
   }
   return temp;
