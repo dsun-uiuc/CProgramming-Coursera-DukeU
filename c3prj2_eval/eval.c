@@ -4,11 +4,11 @@
 #include <assert.h>
 
 int card_ptr_comp(const void * vp1, const void * vp2) {
-  const card_t * const * c1 = vp1;
-  const card_t * const * c2 = vp2;
-  const card_t * cp1 = *c1;
-  const card_t * cp2 = *c2;
-  return ((cp2)->value == (cp1)->value) ? ((cp2)->suit - (cp1)->suit) : ((cp2)->value - (cp1)->value);
+  const card_t * const * cp1 = vp1;
+  const card_t * const * cp2 = vp2;
+  // const card_t * cp1 = *c1;
+  //const card_t * cp2 = *c2;
+  return ((**cp2).value == (**cp1).value) ? ((**cp2).suit - (**cp1).suit) : ((**cp2).value - (**cp1).value);
 }
 
 suit_t flush_suit(deck_t * hand) {
