@@ -45,7 +45,11 @@ int readMatrix(FILE * f, char matrix[10][10]) {
   char line[12] = {'\0'};
   //printf("Length of line: %lu\n", strlen(line));
   unsigned row = 0;
-  while (fgets(line, 12, f) != NULL && row < 10) {
+  while (fgets(line, 12, f) != NULL && row < 11) {
+    if(10 == row) {
+      fprintf(stderr, "More than 10 lines!\n");
+      return EXIT_FAILURE;
+    }
     if(line[10] != '\n') {
       if (strchr(line, '\n') == NULL) {
 	if(fgetc(f) == EOF) {
