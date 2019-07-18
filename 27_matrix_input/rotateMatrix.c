@@ -76,10 +76,10 @@ int readMatrix(FILE * f, char matrix[10][10]) {
 	fprintf(stderr,"Line %d has less than 10 characters!\n", row);
 	return EXIT_FAILURE;
       }
-      if(line[i] == EOF) {
-	fprintf(stderr,"Line %d has EOF before the end!\n", row);
-	return EXIT_FAILURE;
-      }
+      // if(line[i] == EOF) {
+      //fprintf(stderr,"Line %d has EOF before the end!\n", row);
+      //	return EXIT_FAILURE;
+      //}
       matrix[row][i] = line[i];
     }
     row++;
