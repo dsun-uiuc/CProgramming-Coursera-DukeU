@@ -50,6 +50,8 @@ int readMatrix(FILE * f, char matrix[10][10]) {
       fprintf(stderr, "More than 10 lines!\n");
       return EXIT_FAILURE;
     }
+    //printf("Line: %s\n",line);
+    // printf("Length: %lu\n",strlen(line));
     if(line[10] != '\n') {
       if (strchr(line, '\n') == NULL) {
 
@@ -70,8 +72,12 @@ int readMatrix(FILE * f, char matrix[10][10]) {
     }
 
     for (size_t i = 0; i < 10; i++) {
-      if( line[i] == '\0' || line[i] == EOF) {
+      if(line[i] == '\0') {
 	fprintf(stderr,"Line %d has less than 10 characters!\n", row);
+	return EXIT_FAILURE;
+      }
+      if(line[i] == EOF) {
+	fprintf(stderr,"Line %d has EOF before the end!\n", row);
 	return EXIT_FAILURE;
       }
       matrix[row][i] = line[i];
