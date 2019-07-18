@@ -1,4 +1,4 @@
-Grading at Thu Jul 18 02:10:59 UTC 2019
+Grading at Thu Jul 18 02:18:52 UTC 2019
 Attempting to compile rotateMatrix.c
 testcase1 passed
 #################################################
@@ -24,7 +24,7 @@ testcase6 passed
 #################################################
 testcase7: long-file.txt
  (should indicate an error)
-testcase7 failed, your program didn't indicate this is a failure case
+testcase7 passed
 #################################################
 testcase8: long-line-2.txt
  (should indicate an error)
@@ -51,4 +51,4 @@ Your file did not match the expected ouput
 testcase10 failed, your output did not match with the answer
  (Maybe you mishandled reading character 0xFF?)
 
-Overall Grade: C
+Overall Grade: B
