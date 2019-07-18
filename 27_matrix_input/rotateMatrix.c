@@ -52,14 +52,10 @@ int readMatrix(FILE * f, char matrix[10][10]) {
     }
     if(line[10] != '\n') {
       if (strchr(line, '\n') == NULL) {
-	if(fgetc(f) == EOF) {
-	  if(strlen(line) < 10) {
-	    fprintf(stderr,"Last line has less than 10 characters!\n");
+
+	if(strlen(line) < 10) {
+	  fprintf(stderr,"Line %d has less than 10 characters before EOF!\n", row);
 	    return EXIT_FAILURE;
-	  }
-	  else {
-	    fprintf(stderr,"Newline character missing on last line!\n");
-	  }
 	}
 	else {
 
@@ -81,8 +77,9 @@ int readMatrix(FILE * f, char matrix[10][10]) {
       matrix[row][i] = line[i];
     }
     row++;
-    line[10] = '\0';
-    line[11] = '\0';
+    for (size_t i = 0; i < 11; i++) {
+       line[i] = '\0';
+    }
   }
 
   if (row < 10) {
