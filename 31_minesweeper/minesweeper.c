@@ -42,7 +42,30 @@ void addRandomMine(board_t * b) {
 
 board_t * makeBoard(int w, int h, int numMines) {
   //WRITE ME!
-  return NULL;
+  board_t * b = malloc(sizeof(*b));
+  b -> width = w;
+  b -> height = h;
+  b -> totalMines = numMines;
+  b -> board = malloc(h * sizeof(*(b->board)));
+  for (size_t i = 0; i < h; i++) {
+    b->board[i] = malloc(w * sizeof(**(b->board)));
+    for (size_t j = 0; j < w; j++) {
+      b->board[i][j] = UNKNOWN;
+    }
+  }
+
+  for (size_t i = 0; i < numMines; i++) {
+    addRandomMine(b);
+  }
+  /*
+  for (size_t i = 0; i < b->height; i++) {
+    for(size_t j = 0; j < b->width; j++) {
+      printf("%d",b->board[i][j]);
+    }
+    printf("\n");
+  }
+  */
+  return b;
 }
 void printBoard(board_t * b) {    
   int found = 0;
@@ -96,7 +119,19 @@ void printBoard(board_t * b) {
 }
 int countMines(board_t * b, int x, int y) {
   //WRITE ME!
-  return 0;
+  int count = 0;
+
+  for (size_t i = (0 == x ? x : x - 1); i <= (b->width - 1 == x ? x : x + 1); i++) {
+    for (size_t j = (0 == y ? y : y - 1); j <= (b->height - 1 == y ? y : y + 1); j++) {
+      if (i == x && j == y) {
+	continue;
+      }
+      if (b->board[j][i]) {
+	count++;
+      }
+    }
+  }
+  return count;
 }
 int click (board_t * b, int x, int y) {
   if (x < 0 || x >= b->width ||
@@ -119,11 +154,23 @@ int click (board_t * b, int x, int y) {
 
 int checkWin(board_t * b) {
   //WRITE ME!
-  return 0;
+  for (size_t i = 0; i < b->height; i++) {
+    for(size_t j = 0; j < b->width; j++) {
+      if(UNKNOWN == b->board[i][j]) {
+	return 0;
+      }
+    }
+  }
+  return 1;
 }
 
 void freeBoard(board_t * b) {
   //WRITE ME!
+  for (size_t i = 0; i < b->height; i++) {
+    free(b->board[i]);
+  }
+  free(b->board);
+  free(b);
 }
 
 int readInt(char ** linep, size_t * lineszp) {
@@ -275,15 +322,15 @@ int main(int argc, char ** argv) {
 	    "Width, height, and numMines must all be positive ints\n");
     return EXIT_FAILURE;
   }
-  char * line = NULL;
-  size_t linesz = 0;
+   char * line = NULL;
+   size_t linesz = 0;
 
-  do {
+   do {
     board_t * b = makeBoard (width, height, numMines);
     int gameOver = 0;
     while (!gameOver) {
       gameOver = playTurn(b, &line, &linesz);
-    }
+      }
     freeBoard(b);
     do {
       printf("Do you want to play again?\n");
