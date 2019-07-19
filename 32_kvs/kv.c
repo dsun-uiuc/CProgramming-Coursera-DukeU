@@ -22,27 +22,20 @@ kvarray_t * readKVs(const char * fname) {
   
   kvarray_t * kva = malloc(sizeof(*kva));
   kva-> kvparray = NULL;
-  
-  // while(getline(&line, &sz, f) >=0)
-  if (getline(&line, &sz, f) < 0) {
-    perror("Empty file!");
-    free(kva);
-    free(line);
-    fclose(f);
-    exit(EXIT_FAILURE);
-  }
-  
-  do {
+  kva-> length = 0;
+
+  while(getline(&line, &sz, f) >=0) {
 
     ptEq = strchr(line, '=');
     ptNl = strchr(line, '\n'); 
 
     if (NULL == ptEq) {
-      perror("Cannot find \'=\' in line!");
-      free(line);
-      free(kva);
-      fclose(f);
-      exit(EXIT_FAILURE);
+      //perror("Cannot find \'=\' in line!");
+      //free(line);
+      //free(kva);
+      //fclose(f);
+      //exit(EXIT_FAILURE);
+      continue;
     }
     
     char *ptKey = malloc((ptEq - line + 1) * sizeof(*ptKey));
@@ -69,7 +62,7 @@ kvarray_t * readKVs(const char * fname) {
     ptValue = NULL;
     ptEq = NULL;
     ptNl = NULL;
-    } while(getline(&line, &sz, f) >=0);
+    }
 
   free(line);
   fclose(f);
