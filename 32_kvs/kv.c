@@ -79,7 +79,7 @@ void freeKVs(kvarray_t * pairs) {
 void printKVs(kvarray_t * pairs) {
   //WRITE ME
   for (size_t i = 0; i < pairs->length; i++) {
-    printf("key = %s value = %s\n", pairs->kvparray[i]->key, pairs->kvparray[i]->value);
+    printf("key = \'%s\' value = \'%s\'\n", pairs->kvparray[i]->key, pairs->kvparray[i]->value);
   }
 }
 
