@@ -126,7 +126,7 @@ int countMines(board_t * b, int x, int y) {
       if (i == x && j == y) {
 	continue;
       }
-      if (b->board[j][i]) {
+      if (IS_MINE(b->board[j][i])) {
 	count++;
       }
     }
@@ -213,7 +213,7 @@ void doReveal(board_t * b, int x, int y, int revealMines){
 	  }
 	}
 	else  {
-	  assert(b->board[ny][nx] != HAS_MINE);
+	   assert(b->board[ny][nx] != HAS_MINE);
 	  if (b->board[ny][nx] == UNKNOWN) {
 	    b->board[ny][nx] = countMines(b,nx,ny);
 	  }
