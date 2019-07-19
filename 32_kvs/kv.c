@@ -23,7 +23,16 @@ kvarray_t * readKVs(const char * fname) {
   kvarray_t * kva = malloc(sizeof(*kva));
   kva-> kvparray = NULL;
   
-  while(getline(&line, &sz, f) >=0) {
+  // while(getline(&line, &sz, f) >=0)
+  if (getline(&line, &sz, f) < 0) {
+    perror("Empty file!");
+    free(kva);
+    free(line);
+    fclose(f);
+    exit(EXIT_FAILURE);
+  }
+  
+  do {
 
     ptEq = strchr(line, '=');
     ptNl = strchr(line, '\n'); 
@@ -60,10 +69,8 @@ kvarray_t * readKVs(const char * fname) {
     ptValue = NULL;
     ptEq = NULL;
     ptNl = NULL;
-  }
-  if (0 == i) {
-    
-  }
+    } while(getline(&line, &sz, f) >=0);
+
   free(line);
   fclose(f);
   
