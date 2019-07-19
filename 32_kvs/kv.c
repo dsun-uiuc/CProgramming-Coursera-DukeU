@@ -29,7 +29,10 @@ kvarray_t * readKVs(const char * fname) {
     ptNl = strchr(line, '\n'); 
 
     if (NULL == ptEq) {
-      perror("Cannot find \'=\' in line!\n");
+      perror("Cannot find \'=\' in line!");
+      free(line);
+      free(kva);
+      fclose(f);
       exit(EXIT_FAILURE);
     }
     
@@ -57,6 +60,9 @@ kvarray_t * readKVs(const char * fname) {
     ptValue = NULL;
     ptEq = NULL;
     ptNl = NULL;
+  }
+  if (0 == i) {
+    
   }
   free(line);
   fclose(f);
