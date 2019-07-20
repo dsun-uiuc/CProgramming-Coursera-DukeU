@@ -72,6 +72,9 @@ char value_letter(card_t c) {
   case VALUE_ACE:
     x = 'A';
     break;
+  case 0:
+    x = '?';
+    break;
   default:
     //printf("\nInvalid card value!\n");
     // assert(0);
