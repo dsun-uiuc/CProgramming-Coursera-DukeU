@@ -92,6 +92,7 @@ void free_deck(deck_t * deck) {
     free(deck->cards[i]);
   }
   free(deck->cards);
+  free(deck);
 }
 
 deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands) {
