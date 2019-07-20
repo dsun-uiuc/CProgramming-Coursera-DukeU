@@ -63,7 +63,7 @@ deck_t * make_deck_exclude(deck_t * excluded_cards) {
     // if should be added
     add_card_to(deck, c);
   }
-
+  return deck;
 }
 
 void add_card_to(deck_t * deck, card_t c) {
@@ -73,8 +73,7 @@ void add_card_to(deck_t * deck, card_t c) {
   
   deck->cards = realloc(deck->cards, (deck->n_cards + 1)*sizeof(*deck->cards));
   deck->cards[deck->n_cards] = c2;
-  deck->n_cards++;
-  
+  deck->n_cards++;  
 }
 
 card_t * add_empty_card(deck_t * deck) {
@@ -97,4 +96,7 @@ void free_deck(deck_t * deck) {
 
 deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands) {
 
+  deck_t exclude_deck = {.n_cards = n_hands, .cards = hands};
+  deck_t * deck = make_deck_exclude(exclude_deck);
+  return deck;
 }
