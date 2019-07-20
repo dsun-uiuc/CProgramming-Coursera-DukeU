@@ -68,8 +68,8 @@ deck_t * make_deck_exclude(deck_t * excluded_cards) {
 
 void add_card_to(deck_t * deck, card_t c) {
   card_t * c2 = malloc(sizeof(*c2));
-  c2.value = c.value;
-  c2.suit = c.suit;
+  c2->value = c.value;
+  c2->suit = c.suit;
   
   deck->cards = realloc(deck->cards, (deck->n_cards + 1)*sizeof(*deck->cards));
   deck->cards[deck->n_cards] = c2;
@@ -78,8 +78,8 @@ void add_card_to(deck_t * deck, card_t c) {
 
 card_t * add_empty_card(deck_t * deck) {
   card_t * c0 = malloc(sizeof(*c0));
-  c0.value = 0;
-  c0.suit = 0;
+  c0->value = 0;
+  c0->suit = 0;
 
   deck->cards = realloc(deck->cards, (deck->n_cards + 1)*sizeof(*deck->cards));
   deck->cards[deck->n_cards] = c0;
@@ -95,8 +95,19 @@ void free_deck(deck_t * deck) {
 }
 
 deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands) {
-
-  deck_t exclude_deck = {.n_cards = n_hands, .cards = hands};
+  /* for (size_t i = 0; i < n_hands; i++) {
+    add_card_to(deck_t * deck, card_t c)
+  }
+  */
+  deck_t * exclude_deck = malloc(sizeof(*exclude_deck));
+  for (size_t i = 0; i < n_hands; i++) {
+    for (size_t j = 0; j < hands[i]->n_cards; j++) {
+      add_card_to(exclude_deck, *(hands[i]->cards[j]));
+    }
+  }
+  
   deck_t * deck = make_deck_exclude(exclude_deck);
+  free_deck(exclude_deck);
+  
   return deck;
 }
