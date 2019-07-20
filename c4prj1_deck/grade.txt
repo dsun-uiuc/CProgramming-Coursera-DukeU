@@ -1,0 +1,31 @@
+Grading at Sat Jul 20 06:04:37 UTC 2019
+Compiling deck.c -> deck.o
+deck.c: In function ‘add_card_to’:
+deck.c:71:5: error: request for member ‘value’ in something not a structure or union
+   c2.value = c.value;
+     ^
+deck.c:72:5: error: request for member ‘suit’ in something not a structure or union
+   c2.suit = c.suit;
+     ^
+deck.c: In function ‘add_empty_card’:
+deck.c:81:5: error: request for member ‘value’ in something not a structure or union
+   c0.value = 0;
+     ^
+deck.c:82:5: error: request for member ‘suit’ in something not a structure or union
+   c0.suit = 0;
+     ^
+deck.c: In function ‘build_remaining_deck’:
+deck.c:99:55: error: initialization from incompatible pointer type [-Werror=incompatible-pointer-types]
+   deck_t exclude_deck = {.n_cards = n_hands, .cards = hands};
+                                                       ^
+deck.c:99:55: note: (near initialization for ‘exclude_deck.cards’)
+deck.c:100:37: error: incompatible type for argument 1 of ‘make_deck_exclude’
+   deck_t * deck = make_deck_exclude(exclude_deck);
+                                     ^
+deck.c:52:10: note: expected ‘deck_t * {aka struct deck_tag *}’ but argument is of type ‘deck_t {aka struct deck_tag}’
+ deck_t * make_deck_exclude(deck_t * excluded_cards) {
+          ^
+cc1: all warnings being treated as errors
+Compilation of deck.c failed
+
+Overall Grade: F
