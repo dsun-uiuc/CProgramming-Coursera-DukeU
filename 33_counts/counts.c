@@ -48,7 +48,9 @@ void printCounts(counts_t * c, FILE * outFile) {
   for (size_t i = 0; i < c->size; i++) {
     fprintf(outFile,"%s: %zu\n", c->array[i]->name, c->array[i]->count);
   }
-  fprintf(outFile,"<unknown> : %zu\n", c->unknown);
+  if(c->unknown > 0) {
+    fprintf(outFile,"<unknown> : %zu\n", c->unknown);
+  }
 }
 
 void freeCounts(counts_t * c) {
