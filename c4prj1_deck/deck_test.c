@@ -22,13 +22,13 @@ int main(void) {
   deck_t * hand = make_deck_exclude(&deck_0);
   print_hand(hand);
   printf("\n");
-  card_t * c3 = add_empty_card(hand);
+  card_t * c0 = add_empty_card(hand);
   print_hand(hand);
   printf("\n");
   add_card_to(hand, c1);
   print_hand(hand);
   printf("\n");
-  add_card_to(hand, *c3);
+  add_card_to(hand, *c0);
   print_hand(hand);
   printf("\n");
 
@@ -40,11 +40,40 @@ int main(void) {
   for(size_t i = 0; i < hand->n_cards; i++) {
     printf("%u ",cm2[i]);
   }
+
+  card_t c3 = {.value = 8, .suit = CLUBS};
+  card_t c4 = {.value = 3, .suit = HEARTS};
+
+  card_t c5 = {.value = 11, .suit = CLUBS};
+  card_t c6 = {.value = 6, .suit = HEARTS};
+
+  deck_t ** hand_arr = malloc(2*sizeof(*hand_arr));
+  deck_t hand1 = {.n_cards = 2, .cards =malloc(2*sizeof(*(hand1.cards)))};
+  deck_t hand2 = {.n_cards = 4, .cards =malloc(4*sizeof(*(hand2.cards)))};
+
+  hand1.cards[0] = &c1;
+  hand1.cards[1] = &c6;
+
+  hand2.cards[0] = &c2;
+  hand2.cards[1] = &c3;
+  hand2.cards[2] = &c4;
+  hand2.cards[3] = &c5;
+  
+  hand_arr[0] = &hand1;
+  hand_arr[1] = &hand2;
+  
+  deck_t * hand3 = build_remaining_deck(hand_arr, 2);
+  print_hand(hand3);
+  printf("\n");
   
   free_deck(hand);
+  free_deck(hand3);
   free(deck_0.cards);
+  free(hand1.cards);
+  free(hand2.cards);
   free(cm);
   free(cm2);
+  free(hand_arr);
  
   return EXIT_SUCCESS;
 }

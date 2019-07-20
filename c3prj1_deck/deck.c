@@ -101,6 +101,8 @@ deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands) {
   }
   */
   deck_t * exclude_deck = malloc(sizeof(*exclude_deck));
+  exclude_deck->n_cards = 0;
+  exclude_deck->cards = NULL;
   for (size_t i = 0; i < n_hands; i++) {
     for (size_t j = 0; j < hands[i]->n_cards; j++) {
       add_card_to(exclude_deck, *(hands[i]->cards[j]));
