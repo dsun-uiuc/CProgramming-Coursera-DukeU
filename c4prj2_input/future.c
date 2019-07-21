@@ -32,14 +32,18 @@ void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
 
 
 void future_cards_from_deck(deck_t * deck, future_cards_t * fc) {
+  if (fc->n_decks > deck->n_cards) {
+    perror("Not enough cards for future/unknown cards");
+    exit(EXIT_FAILURE);
+  }
   for (size_t i = 0; i < fc->n_decks; i++) {
     // check if we need card ?i: 
     if(fc->decks[i].n_cards > 0) {
       // check if there are enough cards in deck to draw:
-      if(deck->n_cards < i) {
-	perror("Not enough cards in deck for future/unknown cards");
-	exit(EXIT_FAILURE);
-      }
+      //  if(deck->n_cards < i + 1) {
+      //	perror("Not enough cards in deck for future/unknown cards");
+      //	exit(EXIT_FAILURE);
+      // }
       // assign deck->cards[i] to all pointers in fc->decks[i]:
       for(size_t j = 0; j < fc->decks[i].n_cards; j++) {
 	// pass by value, should not pass by address!
