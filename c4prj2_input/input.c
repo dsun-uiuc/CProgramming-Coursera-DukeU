@@ -94,8 +94,15 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
       }
       
       id_arr[index]++;
+      
+      if(index > 51) {
+	fprintf(stderr,"Index of future cards > 51, index: %zu\n", index);
+	free_deck(hand);
+	exit(EXIT_FAILURE);
+      }
+      
       if(id_arr[index] > 1) {
-	perror("Same future cards in a hand");
+	fprintf(stderr,"Same future cards in a hand, index: %zu\n", index);
 	free_deck(hand);
 	exit(EXIT_FAILURE);
       }
