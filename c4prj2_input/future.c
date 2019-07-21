@@ -3,14 +3,9 @@
 //#include <assert.h>
 #include "future.h" 
 
-/*struct future_cards_tag {
-  deck_t * decks;
-  size_t n_decks;
-};
-*/
 void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
   // check number of decks in fc, if less than index, add empty decks
-  if (index > fc->n_decks - 1) {
+  if (index +1 > fc->n_decks) {
     for (size_t i = fc->n_decks; i < index + 1; i++) {
       fc->decks = realloc(fc->decks, (i + 1) * sizeof(*fc->decks));
       fc->decks[i].cards = NULL;
@@ -20,6 +15,10 @@ void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
     }
   }
     // fc->decks[index].cards[fc->decks.n_cards] = ptr;
+  if(0 == fc->decks[index].n_cards) {
+    fc->decks[index].cards = malloc(sizeof(*(fc->decks[index].cards)));
+  }
+  fc->decks[index].cards = realloc(fc->decks[index].cards, (fc->decks[index].n_cards + 1)* sizeof(*(fc->decks[index].cards))); 
   fc->decks[index].cards[fc->decks[index].n_cards] = ptr;
   fc->decks[index].n_cards++;
 }
