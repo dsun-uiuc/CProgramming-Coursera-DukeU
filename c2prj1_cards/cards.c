@@ -72,13 +72,13 @@ char value_letter(card_t c) {
   case VALUE_ACE:
     x = 'A';
     break;
-  case 0:
+  default:
     x = '?';
     break;
-  default:
+    //default:
     //printf("\nInvalid card value!\n");
     // assert(0);
-    break;
+    // break;
   }
   return x;
 }
