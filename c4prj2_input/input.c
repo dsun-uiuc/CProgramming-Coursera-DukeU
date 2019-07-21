@@ -82,7 +82,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
     case '?':
     default:
       if(isdigit(str[i+2])) {
-	char id[2] = {str[i+1],str[i+2]};
+	char id[3] = {str[i+1],str[i+2],'\0'};
 	index = atoi(id);
 	i += 4;
       }
