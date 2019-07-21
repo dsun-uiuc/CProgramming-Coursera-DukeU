@@ -23,26 +23,44 @@ int main(void) {
     return EXIT_FAILURE;
   }
 
+  FILE * f2 = fopen("Deck.txt","r");
+  
   future_cards_t * fc = malloc(sizeof(*fc));
   fc->decks = malloc(sizeof(*fc->decks));
   fc->n_decks = 0;
 
   size_t n_hands = 0;
+  size_t m_hands = 0;
 
   deck_t ** hands = read_input(f, &n_hands, fc);
-
+  deck_t ** decks = read_input(f2,&m_hands,fc);
+  
   for(size_t i = 0; i < n_hands; i++) {
     print_hand(hands[i]);
     printf("\n");
   }
-
-  future_cards_from_deck(hands[1], fc);
-
+  printf("Hands in deck:\n");
+  for(size_t i = 0; i < m_hands; i++) {
+    print_hand(decks[i]);
+    printf("\n");
+  }
+  
+  future_cards_from_deck(decks[0], fc);
+  
+  printf("After draw from deck1:\n");
   for(size_t i = 0; i < n_hands; i++) {
     print_hand(hands[i]);
     printf("\n");
   }
   
+  future_cards_from_deck(decks[1], fc);
+  
+  printf("After draw from deck2:\n");
+  for(size_t i = 0; i < n_hands; i++) {
+    print_hand(hands[i]);
+    printf("\n");
+  }
+
   printf("\nCards in future decks:\n");
   for(size_t i = 0; i < fc->n_decks; i++) {
     if(fc->decks[i].n_cards > 0) {
@@ -56,6 +74,11 @@ int main(void) {
   }
   free(hands);
 
+  for(size_t i = 0; i < m_hands; i++) {
+    free_deck(decks[i]);
+  }
+  free(decks);
+  
   for (size_t i = 0; i < fc->n_decks; i++) {
     if(fc->decks[i].n_cards > 0) {
       free(fc->decks[i].cards);
@@ -66,6 +89,7 @@ int main(void) {
   free(fc);
 
   fclose(f);
+  fclose(f2);
   return EXIT_SUCCESS;
 }
 
