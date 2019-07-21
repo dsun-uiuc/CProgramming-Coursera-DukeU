@@ -53,7 +53,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   card_t * ptEm = NULL; // pointer to an empty card
   size_t index = 0; 
   // start to read card value/suit pairs, attention: ?10 ?11
-  while(i < strlen(str)) {
+  while(i + 1 < strlen(str)) {
     char value = str[i];
     switch (value) {
     case '2':
