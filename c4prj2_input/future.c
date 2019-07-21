@@ -5,13 +5,16 @@
 
 void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) {
   // check number of decks in fc, if less than index, add empty decks
+  if (index > 51) {
+    perror("Index of future/unknown cards more than 51");
+    exit(EXIT_FAILURE);
+  }
   if (index +1 > fc->n_decks) {
     for (size_t i = fc->n_decks; i < index + 1; i++) {
       fc->decks = realloc(fc->decks, (i + 1) * sizeof(*fc->decks));
       fc->decks[i].cards = NULL;
       fc->decks[i].n_cards = 0;
       fc->n_decks++;
-    // generate empty decks
     }
   }
     // fc->decks[index].cards[fc->decks.n_cards] = ptr;
