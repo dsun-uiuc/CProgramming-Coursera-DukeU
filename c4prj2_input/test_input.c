@@ -17,9 +17,6 @@
 
 int main(void) {
 
-  // test empty line
-  //char str[] = "As Qh Jd Jc 0d 8c 2d Kc Ah 0h 8c ?1 ?0 ?10 ?5 Kc";
-  //char str2[] = "Ks Jh 0d 7c 6d Qc 2h 3c Ad 0h 4d 5c";
   FILE * f = fopen("C4_testinput.txt","r");
   if (NULL == f) {
     perror("Cannot open file");
@@ -32,26 +29,20 @@ int main(void) {
 
   size_t n_hands = 0;
 
-  //deck_t ** hands = malloc(sizeof(*hands));
   deck_t ** hands = read_input(f, &n_hands, fc);
-
-  //deck_t * hand = hand_from_string(str, fc);
-  //deck_t * hand2 = hand_from_string(str2, fc);
 
   for(size_t i = 0; i < n_hands; i++) {
     print_hand(hands[i]);
     printf("\n");
   }
 
-  for(size_t i = 0; i < fc->n_decks; i++) {
-    printf("\nindex: %zu, # of cards: %zu", i, fc->decks[i].n_cards);
-  }
-
   future_cards_from_deck(hands[1], fc);
 
-  printf("\nCards after draw future decks:\n");
-  print_hand(hands[0]);
-
+  for(size_t i = 0; i < n_hands; i++) {
+    print_hand(hands[i]);
+    printf("\n");
+  }
+  
   printf("\nCards in future decks:\n");
   for(size_t i = 0; i < fc->n_decks; i++) {
     if(fc->decks[i].n_cards > 0) {
