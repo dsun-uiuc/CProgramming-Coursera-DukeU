@@ -32,7 +32,7 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   ptNl = strchr(str, '\n');
 
   if (ptNl == str) {
-    perror("Empty line");
+    // perror("Empty line");
     return NULL;
   }
   
