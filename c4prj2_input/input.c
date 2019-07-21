@@ -101,7 +101,13 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
     free_deck(hand);
     perror("Hand has less than 5 cards");
     exit(EXIT_FAILURE);
-  }
 
+  if(hand->n_cards > 52) {
+    free_deck(hand);
+    perror("Hand has more than 52 cards");
+    exit(EXIT_FAILURE);
+    }
+  }
+  
   return hand; 
 }
