@@ -65,6 +65,7 @@ int main(void) {
   free(fc->decks);
   free(fc);
 
+  fclose(f);
   return EXIT_SUCCESS;
 }
 
