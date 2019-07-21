@@ -53,6 +53,8 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   card_t * ptEm = NULL; // pointer to an empty card
   size_t index = 0; 
   // start to read card value/suit pairs, attention: ?10 ?11
+  // need to assert if same future cards in the same hand: ?1 ?1
+  size_t id_arr[52] = {0};
   while(i + 1 < strlen(str)) {
     char value = str[i];
     switch (value) {
@@ -90,7 +92,14 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	index = atoi(&str[i+1]);
 	i += 3;
       }
-
+      
+      id_arr[index]++;
+      if(id_arr[index] > 1) {
+	perror("Same future cards in a hand");
+	free_deck(hand);
+	exit(EXIT_FAILURE);
+      }
+      
       ptEm = add_empty_card(hand);
       add_future_card(fc, index, ptEm);
       break;
