@@ -115,7 +115,6 @@ void print_card(card_t c) {
 
 card_t card_from_letters(char value_let, char suit_let) {
   card_t temp;
-  unsigned val;
   switch(value_let) {
   case '2':
   case '3':
@@ -125,28 +124,30 @@ card_t card_from_letters(char value_let, char suit_let) {
   case '7':
   case '8':
   case '9':
-    val = value_let - '0';
+    temp.value = value_let - '0';
     break;
   case '0':
-    val = 10;
+    temp.value = 10;
     break;
   case 'J':
-    val = VALUE_JACK;
+    temp.value = VALUE_JACK;
     break;
   case 'Q':
-    val = VALUE_QUEEN;
+    temp.value = VALUE_QUEEN;
     break;
   case 'K':
-    val = VALUE_KING;
+    temp.value = VALUE_KING;
     break;
   case 'A':
-    val = VALUE_ACE;
+    temp.value = VALUE_ACE;
     break;
   default:
     //assert(0);
+    perror("Invalid card value"
+    exit(EXIT_FAILURE);
     break;
   }   
-  temp.value = val;
+      // temp.value = val;
 
   // convert suit_let to enum suit_t
   switch(suit_let) {
