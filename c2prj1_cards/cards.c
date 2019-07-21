@@ -143,7 +143,7 @@ card_t card_from_letters(char value_let, char suit_let) {
     break;
   default:
     //assert(0);
-    perror("Invalid card value"
+    perror("Invalid card value");
     exit(EXIT_FAILURE);
     break;
   }   
