@@ -34,6 +34,9 @@ int main(void) {
 
   deck_t ** hands = read_input(f, &n_hands, fc);
   deck_t ** decks = read_input(f2,&m_hands,fc);
+
+  printf("n_hands: %zu, ",n_hands);
+  printf("m_hands: %zu\n",m_hands);
   
   for(size_t i = 0; i < n_hands; i++) {
     print_hand(hands[i]);
@@ -47,8 +50,13 @@ int main(void) {
   
   future_cards_from_deck(decks[0], fc);
   
+  
   printf("After draw from deck1:\n");
   for(size_t i = 0; i < n_hands; i++) {
+    print_hand(hands[i]);
+    printf("\n");
+    printf("Sorted\n");
+    qsort(hands[i]->cards, hands[i]->n_cards, sizeof(card_t*), card_ptr_comp);
     print_hand(hands[i]);
     printf("\n");
   }
@@ -59,11 +67,16 @@ int main(void) {
   for(size_t i = 0; i < n_hands; i++) {
     print_hand(hands[i]);
     printf("\n");
+    printf("Sorted\n");
+    qsort(hands[i]->cards, hands[i]->n_cards, sizeof(card_t*), card_ptr_comp);
+    print_hand(hands[i]);
+    printf("\n");
   }
 
   printf("\nCards in future decks:\n");
   for(size_t i = 0; i < fc->n_decks; i++) {
     if(fc->decks[i].n_cards > 0) {
+      printf("\ni = %zu\n", i);
       print_hand(&fc->decks[i]);
     }
   }

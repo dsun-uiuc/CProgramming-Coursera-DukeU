@@ -46,6 +46,12 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
     i++;
   }
 
+  // remove trailing white spaces
+  // size_t j = strlen(str) - 1;
+  // while(j > 0 && str[j]== ' ') {
+  //  j--;
+  // }
+  
   deck_t * hand = malloc(sizeof(*hand));
   hand->n_cards = 0;
   hand->cards = malloc(sizeof(*(hand->cards)));
@@ -56,9 +62,12 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
   // start to read card value/suit pairs, attention: ?10 ?11
   // need to assert if same future cards in the same hand: ?1 ?1
   size_t id_arr[52] = {0};
-  while(i + 1 < strlen(str)) {
+  while(i + 1 < strlen(str) ) {
     char value = str[i];
     switch (value) {
+    case ' ':
+      i++;
+      break;
     case '2':
     case '3':
     case '4':
@@ -77,21 +86,20 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
 	return EXIT_SUCCESS;
       }
       char suit = str[i+1];
-      i += 3;
+      i += 2;
       card = card_from_letters(value, suit);
       add_card_to(hand, card);
       break;
 
     case '?':
-    default:
       if(isdigit(str[i+2])) {
 	char id[3] = {str[i+1],str[i+2],'\0'};
 	index = atoi(id);
-	i += 4;
+	i += 3;
       }
       else {
 	index = atoi(&str[i+1]);
-	i += 3;
+	i += 2;
       }
       
       id_arr[index]++;
@@ -111,6 +119,9 @@ deck_t * hand_from_string(const char * str, future_cards_t * fc) {
       ptEm = add_empty_card(hand);
       add_future_card(fc, index, ptEm);
       break;
+    default:
+      perror("Invalid value/suit pair");
+      exit(EXIT_FAILURE);
     }
   }
 
