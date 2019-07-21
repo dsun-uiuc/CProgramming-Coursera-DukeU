@@ -1,13 +1,15 @@
-Grading at Sun Jul 21 12:47:30 UTC 2019
+Grading at Sun Jul 21 12:58:03 UTC 2019
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
 gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o cards.o cards.c
 cards.c: In function ‘card_from_letters’:
-cards.c:170:10: error: ‘val’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
-   return temp;
-          ^
-cc1: all warnings being treated as errors
+cards.c:147:5: error: expected ‘)’ before ‘exit’
+     exit(EXIT_FAILURE);
+     ^
+cards.c:149:3: error: expected ‘;’ before ‘}’ token
+   }   
+   ^
 <builtin>: recipe for target 'cards.o' failed
 make: *** [cards.o] Error 1
 make failed
